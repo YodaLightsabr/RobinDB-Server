@@ -1,0 +1,36 @@
+{
+  "name": "robindb-server",
+  "version": "1.0.4",
+  "description": "Host a RobinDB server",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nedb": "^1.8.0",
+    "robindb": "^1.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "database",
+    "quick",
+    "easy",
+    "fast",
+    "db",
+    "nedb",
+    "cloud",
+    "server"
+  ],
+  "author": "YodaLightsabr",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YodaLightsabr/RobinDB-Server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/YodaLightsabr/RobinDB-Server/issues"
+  },
+  "homepage": "https://github.com/YodaLightsabr/RobinDB-Server#readme"
+}
