@@ -40,6 +40,18 @@ class Server extends require('events').EventEmitter {
       res.send(JSON.stringify(data));
     });
 
+    app.post('/all', async (req, res) => {
+      if (req.nestAuth('GET', '*')) return res.status(403).sendError2('Unauthorized');
+      var data = await db.all();
+      res.send(JSON.stringify(data));
+    });
+
+    app.post('/has/:path', async (req, res) => {
+      if (req.nestAuth('GET', req.params.path)) return res.status(403).sendError2('Unauthorized');
+      var data = await db.has(req.params.path);
+      res.send(JSON.stringify(data));
+    });
+
     app.post('/set/:path', async (req, res) => {
       if (req.nestAuth('SET', req.params.path)) return res.status(403).sendError2('Unauthorized');
       if (!req.body.value) return res.sendError2('You must specify a value to set.');
